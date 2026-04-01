@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<style>
+body {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(120deg,#89f7fe,#66a6ff);
+  font-family:sans-serif;
+}
+
+.form {
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+input {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-bottom:2px solid #ccc;
+  outline:none;
+  transition:0.3s;
+}
+
+input:focus {
+  border-color:#66a6ff;
+}
+
+button {
+  width:100%;
+  padding:10px;
+  background:#66a6ff;
+  color:white;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#4d8df5;
+}
+</style>
+</head>
+<body>
+
+<div class="form">
+  <h2>Login</h2>
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+  <button>Login</button>
+</div>
+
+</body>
+</html>
