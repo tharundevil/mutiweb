@@ -1,0 +1,14 @@
+server {
+    listen 80;
+
+    location /gallery/ {
+        proxy_pass http://site1/;
+    }
+
+    location /login/ {
+        proxy_pass http://site2/;
+    }
+
+    location /portfolio/ {
+        proxy_pass http://site3/;
+    }

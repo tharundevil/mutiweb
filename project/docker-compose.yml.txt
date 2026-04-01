@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  gallery:
+    build: ./gallery
+    container_name: gallery
+
+  login:
+    build: ./login
+    container_name: login
+
+  portfolio:
+    build: ./portfolio
+    container_name: portfolio
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - gallery
+      - login
+      - portfolio
