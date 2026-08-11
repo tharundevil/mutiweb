@@ -1,0 +1,2 @@
+# Static Application & Kubernetes Monitoring Stack
+This repository contains the infrastructure configurations, deployment manifests, and dashboard specifications to host a containerized static application while collecting and visualizing live engine metrics.

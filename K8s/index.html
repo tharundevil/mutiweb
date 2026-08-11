@@ -1,0 +1,805 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tharun M | Cloud & DevOps Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* GENERAL */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 6px;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            transition: 0.3s;
+        }
+
+        .btn.primary {
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.85;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .about-card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #cbd5e1;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid #38bdf8;
+            padding-left: 30px;
+        }
+
+        .experience-card {
+            background: #1e293b;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .experience-card h3 {
+            color: #38bdf8;
+        }
+
+        .experience-card h4 {
+            color: #94a3b8;
+            margin: 5px 0 15px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            padding: 28px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #0f172a;
+            border: 1px solid #475569;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .education-card h3 {
+            color: #38bdf8;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+
+        .contact a {
+            color: #38bdf8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .about-container,
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                Tharun M
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section id="home">
+
+        <div class="hero">
+
+            <h1>
+                Hi, I'm <span>Tharun M</span>
+            </h1>
+
+            <h2>
+                Cloud & DevOps Engineer
+            </h2>
+
+            <p>
+                Motivated Cloud and DevOps Engineer with practical experience
+                in AWS, Microsoft Azure, CI/CD, Docker, Kubernetes, Terraform,
+                Prometheus and Grafana.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="mailto:tharunvmt3@gmail.com" class="btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-container">
+
+            <div class="about-card">
+
+                <h3>Professional Summary</h3>
+
+                <p>
+                    Motivated Cloud and DevOps Engineer with hands-on experience
+                    in cloud platforms, infrastructure automation, CI/CD
+                    pipelines, containerization and server monitoring.
+                </p>
+
+                <br>
+
+                <p>
+                    Experienced with AWS and Microsoft Azure along with
+                    Jenkins, Docker, Kubernetes, Terraform, Prometheus and
+                    Grafana.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>What I Do</h3>
+
+                <p>
+                    • Cloud infrastructure configuration
+                </p>
+
+                <p>
+                    • Infrastructure as Code using Terraform
+                </p>
+
+                <p>
+                    • CI/CD automation using Jenkins
+                </p>
+
+                <p>
+                    • Containerization using Docker
+                </p>
+
+                <p>
+                    • Kubernetes deployment and management
+                </p>
+
+                <p>
+                    • Infrastructure and server monitoring
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Cloud</h3>
+                <p>
+                    AWS, Microsoft Azure
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>AWS Services</h3>
+                <p>
+                    EC2, S3, EBS, EFS, RDS, ELB, VPC, IAM
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>DevOps</h3>
+                <p>
+                    Jenkins, Docker, Kubernetes, Git, GitHub
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Infrastructure as Code</h3>
+                <p>
+                    Terraform
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Monitoring</h3>
+                <p>
+                    Prometheus, Grafana
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Operating System</h3>
+                <p>
+                    Linux / Ubuntu
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>
+                    Python
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Networking</h3>
+                <p>
+                    Cisco Packet Tracer
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Azure DevOps</h3>
+                <p>
+                    Azure Repos and access management
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2 class="section-title">
+            Work <span>Experience</span>
+        </h2>
+
+        <div class="timeline">
+
+            <div class="experience-card">
+
+                <h3>Software Developer Intern</h3>
+
+                <h4>
+                    SmartWorkz | March 2026 – Present
+                </h4>
+
+                <ul>
+                    <li>
+                        Configured AWS services including EC2, VPC, IAM
+                        and Security Groups.
+                    </li>
+
+                    <li>
+                        Automated infrastructure provisioning using Terraform.
+                    </li>
+
+                    <li>
+                        Built and managed CI/CD pipelines using Jenkins
+                        and Docker.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <h3>Cloud & DevOps Trainee</h3>
+
+                <h4>
+                    Besant Technologies | July 2024 – December 2024
+                </h4>
+
+                <ul>
+                    <li>
+                        Configured Azure DevOps and managed Azure Repo
+                        access permissions.
+                    </li>
+
+                    <li>
+                        Deployed and managed multiple static websites using
+                        Nginx and Docker.
+                    </li>
+
+                    <li>
+                        Automated deployment workflows using Jenkins CI/CD.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <h3>
+                    Nginx Multi-Site Deployment with Jenkins
+                </h3>
+
+                <p>
+                    Configured Nginx virtual hosts to serve multiple static
+                    websites from a single Linux server and automated the
+                    deployment workflow using Jenkins CI/CD.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Nginx</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Linux</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    AWS VPC with Public & Private Subnets
+                </h3>
+
+                <p>
+                    Configured an AWS VPC with public and private subnets,
+                    route tables, Internet Gateway, NAT Gateway and
+                    security groups using Terraform.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">AWS</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">VPC</span>
+                    <span class="tag">IAM</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Server Monitoring
+                </h3>
+
+                <p>
+                    Set up Prometheus and Node Exporter to collect CPU,
+                    memory and disk metrics from Linux servers. Created
+                    Grafana dashboards and alert rules.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Prometheus</span>
+                    <span class="tag">Grafana</span>
+                    <span class="tag">Node Exporter</span>
+                    <span class="tag">Linux</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Kubernetes Container Monitoring
+                </h3>
+
+                <p>
+                    Deploying a containerized web application on Kubernetes
+                    and integrating Prometheus and Grafana for monitoring
+                    application and container metrics.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Prometheus</span>
+                    <span class="tag">Grafana</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                B.Tech in Information Technology
+            </h3>
+
+            <p>
+                K S Rangasamy College of Technology (Autonomous)
+            </p>
+
+            <p>
+                Tiruchengode
+            </p>
+
+            <p>
+                July 2020 – May 2024
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Get In <span>Touch</span>
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                Interested in Cloud and DevOps opportunities?
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:tharunvmt3@gmail.com">
+                    tharunvmt3@gmail.com
+                </a>
+            </p>
+
+            <p>
+                Phone:
+                <a href="tel:+918838408801">
+                    +91 8838408801
+                </a>
+            </p>
+
+            <p>
+                Location: Tiruchengode, Tamil Nadu
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/tharundevil/Project.git"
+                   target="_blank">
+                    GitHub Profile
+                </a>
+            </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://linkedin.com/in/tharun-m-347662253"
+                   target="_blank">
+                    LinkedIn Profile
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Tharun M | Cloud & DevOps Engineer
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-metrics-config
+data:
+  metrics.conf: |
+    server {
+        listen 8081;
+        server_name localhost;
+        location /stub_status {
+            stub_status on;
+            allow 127.0.0.1;
+            deny all;
+        }
+    }
