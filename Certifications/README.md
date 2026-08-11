@@ -24,7 +24,8 @@ I have successfully earned the **AWS Certified Cloud Practitioner** certificatio
 
 The certification document is available in this repository:
 
-📁 [`AWS Certified Cloud Practitioner certificate.pdf`](./AWS Certified Cloud Practitioner certificate.pdf) <Project/Certifications>
+📁 [[AWS Certified Cloud Practitioner Certificate](./Certifications/AWS%20Certified%20Cloud%20Practitioner%20certificate.pdf)
+ <Project/Certifications>
 
 ---
 
